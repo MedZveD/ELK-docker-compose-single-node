@@ -6,7 +6,7 @@ services:
       - xpack.security.enabled=false
       - "discovery.type=single-node"
     networks:
-      - ek-net
+      - elk-net
     ports:
       - 9200:9200
   kibana:
@@ -15,7 +15,7 @@ services:
     environment:
       - ELASTICSEARCH_HOSTS=http://elastic:9200
     networks:
-      - ek-net
+      - elk-net
     depends_on:
       - elasticsearch
     ports:
