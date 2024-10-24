@@ -2,6 +2,9 @@ services:
   elasticsearch:
     container_name: elastic
     image: elasticsearch:8.15.3
+    volumes:
+        - /opt/elasticsearch/esdata:/var/lib/elasticsearch
+        - /opt/elasticsearch/eslogs:/var/log/elasticsearch
     environment:
       - TZ=Africa/Kampala 
       # Or you can use HV time 
